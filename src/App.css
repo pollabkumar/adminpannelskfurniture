@@ -1,38 +1,477 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+* {
+	margin: 0px;
+	padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	font-family: "Open Sans", sans-serif;
+	background: #f6f6f6 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	
+header {
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+header .logo {
+	width: 80px;
 }
 
-.App-link {
-  color: #61dafb;
+header button.rounded-circle {
+	min-width: 40px !important;
+	width: 40px !important;
+	height: 40px !important;
+	background: rgb(172, 172, 172) !important;
+	color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header button.rounded-circle svg {
+	color: black;
+	font-size: 18px !important;
+}
+.menubut:hover{
+    background-color: unset;
+}
+.searchBox {
+	width: 300px;
+	height: 35px;
+	background: #f6f6f6;
+	border-radius: 5px;
+	padding: 3px 10px;
+}
+.menubar {
+    font-size: 35px;
+    background-color: #f6f6f6;
+    padding: 4px;
+}
+.menubar:hover{
+    background-color: black;
+}
+.searchBox input {
+	background: transparent;
+	border: 0px;
+	outline: none;
+	padding-left: 5px;
+	font-size: 13px;
+}
+
+.searchBox input::-webkit-input-placeholder {
+	color: rgb(190, 190, 190);
+}
+
+.searchBox svg {
+	font-size: 15px;
+}
+
+.userImg svg{
+	font-size: 30px;
+    cursor: pointer;
+    border: 2px solid #ff9300;
+    border-radius: 50%;
+}
+.myAcc {
+    text-align: left !important;
+    color: black !important;
+}
+.myAcc .userInfo {
+	padding-left: 5px;
+}
+
+.myAcc .userInfo h4 {
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 0px;
+    text-transform: capitalize;
+}
+
+.myAcc .userInfo p {
+	font-size: 11px;
+	margin-top: 0px;
+	color: #9b4723;
+	opacity: 0.9;
+    text-transform: lowercase;
+}
+#account-menu li{
+    font-size: 12px;
+}
+.main .sidebarwrapper {
+    width: 23%;
+    flex: 0 0 23%;
+    transition: all 0.3s ease-in-out;
+}
+
+.main .sidebarwrapper .Sidebar {
+    width: 23%;
+    height: 100vh;
+    position: fixed;
+    top: 80px;
+    left: 0px;
+    background: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: calc(100%-70px);
+    padding-bottom: 40px;
+}
+
+.main .sidebarwrapper .Sidebar ul {
+    margin-bottom: 0px;
+    padding: 10px 15px;
+   
+}
+.main .sidebarwrapper .Sidebar::-webkit-scrollbar-thumb{background: transparent !important;}
+.main .sidebarwrapper:hover .-webkit-scrollbar-thumb{background: rgb(194, 167, 202) !important;}
+
+.main .sidebarwrapper .Sidebar ul li {
+    list-style: none;
+}
+
+.main .sidebarwrapper .Sidebar ul li button {
+    margin-bottom: 0px;
+    color: #9b4723;
+    align-items: left;
+    justify-content: left;
+    border-radius: 0px !important;
+    padding: 12px 15px !important;
+    align-items: center !important;
+   font-weight: 600;
+   font-family: "Open Sans", sans-serif !important;
+   border-radius: 7px !important;
+}
+.main .sidebarwrapper .Sidebar ul li button:hover{background: #fff;}
+.main .sidebarwrapper .Sidebar ul li button:active{background: #fff;}
+.main .sidebarwrapper .Sidebar ul li button .icon {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.main .sidebarwrapper .Sidebar ul li button .icon svg {
+    color: #9b4723;
+    opacity: 0.8;
+    font-size: 20px;
+}
+
+.main .sidebarwrapper .Sidebar ul li button .arrow {
+    margin-left: auto;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 25px;
+    height: 25px;
+}
+
+.main .sidebarwrapper .Sidebar ul .submenu{
+    padding: 0px 48px;
+    position: relative;
+}
+.main .sidebarwrapper .Sidebar ul .submenu ::before{
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+
+}
+.main .sidebarwrapper .Sidebar ul .submenu li{
+    width: 100%;
+    list-style: none;
+}
+.main .sidebarwrapper .Sidebar ul .submenu li a{
+    color: #000 !important;
+    text-decoration: none;
+    display: block;
+    padding: 5px 20px;
+    font-size:15px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.main .sidebarwrapper .Sidebar ul .submenu li a :hover{
+    color: blueviolet !important;
+}
+.main .content {
+    width: 77%;
+    flex: 0 0 77%;
+    transition: all 0.3s ease-in-out;
+}
+.right-content {
+    padding: 120px 30px 90px;
+}
+.dashboardboxwrapper {
+    gap: 15px;
+    width: 100%;
+}
+.dashboardboxwrapper .dashboardbox{
+    width: 45%;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 20px;
+}
+.dashboardbox .ml-auto svg{
+    color: white;
+    font-size: 60px;
+    opacity: .6;
+    margin-top: 10px;
+    background-color: #80808047;
+    padding: 8px;
+    border-radius: 5px;
+}
+.breadcum {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #80808042;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+.breadcum h2{
+     font-size: 18px;
+     margin-bottom: 0px;
+}
+.user-table table{
+    background-color: white;
+}
+.user-table table thead{
+    background-color: #363636;
+    color: white;
+}
+.user-table table tr{
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+.user-table table th{
+    font-size: 16px;
+    padding: 8px;
+    font-weight: 600;
+}
+.user-table table td{
+    font-size: 14px;
+    padding: 12px 8px;
+    font-weight: 400;
+}
+.user-table table .tabaction{
+    border: none;
+    background-color: #8BC34A;
+    padding: 2px 5px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.user-table table .tabstatus{
+    border: none;
+    background-color: #dd3012;
+    padding: 2px 5px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.pagination {
+    display: flex;
+    list-style: none;
+    border-radius: .25rem;
+    justify-content: end;
+    padding-top: 20px;
+    border-radius: 3px;
+}
+.pagination button{
+    padding: 8px 14px;
+    background-color: white;
+    border: none;
+    font-size: 13px;
+}
+.procat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.procat .tabenable{
+    border: none;
+    background-color: #FFC107;
+    padding: 2px 5px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.procat .tabedit {
+    border: none;
+    background-color: #12c5dd;
+    padding: 2px 5px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+    width: 55px;
+}
+
+.product-table table{
+    background-color: white;
+}
+.product-table table thead{
+    background-color: #363636;
+    color: white;
+}
+.product-table table tr{
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+.product-table table th{
+    font-size: 16px;
+    padding: 8px;
+    font-weight: 600;
+}
+.product-table table td{
+    font-size: 14px;
+    padding: 12px 8px;
+    font-weight: 400;
+}
+.product-table table .tabaction{
+    border: none;
+    background-color: #8BC34A;
+    padding: 2px 5px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.product-table table .tabstatus{
+    border: none;
+    background-color: #dd3012;
+    padding: 2px 5px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+.order-table table{
+    background-color: white;
+}
+.order-table table thead{
+    background-color: #363636;
+    color: white;
+}
+.order-table table tr{
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+.order-table table th{
+    font-size: 16px;
+    padding: 8px;
+    font-weight: 600;
+}
+.order-table table td{
+    font-size: 14px;
+    padding: 12px 8px;
+    font-weight: 400;
+}
+.order-table table .tabaction{
+    border: none;
+    background-color: #8BC34A;
+    padding: 2px 5px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.order-table table .tabstatus{
+    border: none;
+    background-color: #dd3012;
+    padding: 2px 5px;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.cate{
+    text-align: center;
+    border: 1px dashed #ff8701;
+    width: fit-content;
+    margin: auto;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+.cat {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.cat label{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    width: 250px;
+}
+.cat input{
+    padding: 9px 20px;
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    box-shadow: 2px 2px 5px #8080805c;
+    border-radius: 5px;
+}
+.cat select{
+    padding: 9px 20px;
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    box-shadow: 2px 2px 5px #8080805c;
+    border-radius: 5px;
+}
+.cate button{
+    margin-top: 40px;
+    border: none;
+    background-color: #F44336;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.change-password-form{
+    text-align: center;
+    border: 1px dashed #ff8701;
+    width: fit-content;
+    margin: auto;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+.password-field {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.password-field label{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    width: 250px;
+}
+.password-field input{
+    padding: 9px 20px;
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    box-shadow: 2px 2px 5px #8080805c;
+    border-radius: 5px;
+}
+.change-password-form button{
+    margin-top: 40px;
+    border: none;
+    background-color: #F44336;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
